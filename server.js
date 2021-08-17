@@ -28,10 +28,6 @@ const sess = {
 
 app.use(session(sess));
 
-// Define middleware here
-// app.use(express.static(path.join(__dirname, 'build')));
-// app.use(express.static("public"));
-
 
 // Define middleware here
 app.use(express.json());

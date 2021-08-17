@@ -4,8 +4,14 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "node server.js",
+    "dev": "run-p server start",
+    "start": "concurrently \"cd client && react-scripts start\" \"nodemon server\"",
+    "client": "cd client && npm run start",
+    "build": "cd client && npm run build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/abbeyschu/RickDoesThings/issues"
   },
-  "homepage": "https://github.com/abbeyschu/RickDoesThings#readme"
+  "homepage": "https://github.com/abbeyschu/RickDoesThings#readme",
+  "dependencies": {
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  }
 }
