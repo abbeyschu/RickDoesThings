@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
       if (!userData) {
         res
           .status(400)
-          .json({ message: 'Incorrect username, please try again' });
+          .json({ message: 'Incorrect email, please try again' });
         return;
       }
   
